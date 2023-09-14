@@ -16,6 +16,10 @@ export async function GET() {
       throw new Error('Failed to fetch data')
     }
     const data = await res.json()
+
+    if (data.error) {
+      throw new Error(data.error.message)
+    }
  
     return NextResponse.json({ data })
 }
