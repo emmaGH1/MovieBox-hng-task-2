@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { BsDashLg } from 'react-icons/bs';
 import { AiFillPlayCircle } from 'react-icons/ai';
+import { BASE_URL, IMG_BASE_URL } from "@/app/constants";
 
 interface MovieData {
   adult: boolean;
@@ -21,9 +21,6 @@ interface MovieData {
   vote_average: number;
   vote_count: number;
 }
-
-const BASE_URL = 'https://api.themoviedb.org/3/';
-const IMG_BASE_URL = 'https://image.tmdb.org/t/p/';
 
 const fetchData = async () => {
   try {
