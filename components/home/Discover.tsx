@@ -17,7 +17,7 @@ const Discover = async () => {
     const { results } = await getTrendingMovies();
     const movieIndex = getRandomIndex(results);
     const currentItem: MovieData | undefined = results[movieIndex];
-    const movieName = currentItem?.original_title || currentItem?.name || currentItem?.original_name;
+  
     return (
       <div className="flex w-full scroll-smooth">
         {/* Banner image */}
@@ -33,7 +33,10 @@ const Discover = async () => {
         {/* Name, description and others */}
         <div className="flex flex-col lg:w-4/5 mx-auto lg:mt-14 w-full mt-10">
           <div className="font-semibold text-5xl flex flex-wrap text-center justify-center w-4/5 mx-auto lg:mx-0 lg:justify-start">
-            {movieName}
+            {currentItem?.original_title || 
+             currentItem?.name ||
+              currentItem?.original_name
+            }
           </div>
           <div className="flex mb-3 text-gray-400 justify-center lg:justify-start">
             <div className="flex items-center mr-8">
