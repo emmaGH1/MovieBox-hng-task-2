@@ -2,7 +2,7 @@ import Image from "next/image";
 import { AiFillPlayCircle } from 'react-icons/ai';
 import { IMG_BASE_URL } from "@/constants";
 import { MovieData } from "@/types";
-import { getTrendingMovie } from "@/lib/getTrendingMovie";
+import { getTrendingMovies } from "@/lib/getTrendingMovies";
 
 
 const getRandomIndex = (array: object[]) => {
@@ -14,7 +14,7 @@ const getRandomIndex = (array: object[]) => {
 
 const Discover = async () => {
   try {
-    const { results } = await getTrendingMovie();
+    const { results } = await getTrendingMovies();
     const movieIndex = getRandomIndex(results);
     const currentItem: MovieData | undefined = results[movieIndex];
     const movieName = currentItem?.original_title || currentItem?.name || currentItem?.original_name;
