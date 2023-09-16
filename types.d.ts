@@ -23,5 +23,6 @@ export interface MovieData {
 export interface SidebarLinkProps {
   label: string,
   link: string,
-  icon?: IconType
+  icon?: IconType,
+  id: string
 }[]
