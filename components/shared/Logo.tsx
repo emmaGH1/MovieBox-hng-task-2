@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Logo = () => {
+interface Props {
+  className?: string
+}
+
+const Logo = ({ className }: Props) => {
   return (
-    <Link href='/' className="flex items-center">
+    <Link href='/' className={`flex items-center ${className}`}>
         <Image 
         src='/assets/logo.svg' alt='logo' 
         width={50} height={50} priority 

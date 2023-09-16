@@ -1,5 +1,7 @@
-import { AiOutlineTwitter, AiOutlineGithub, AiFillLinkedin, } from 'react-icons/ai'
-import { BsLink45Deg } from 'react-icons/bs'
+import { AiOutlineTwitter, AiOutlineGithub, AiFillLinkedin, AiOutlineVideoCamera} from 'react-icons/ai'
+import { BsLink45Deg, BsCardList } from 'react-icons/bs'
+import { BiHomeAlt2 } from 'react-icons/bi'
+import { PiTelevisionSimple } from 'react-icons/pi'
 
 export const BASE_URL = 'https://api.themoviedb.org/3/';
 export const IMG_BASE_URL = 'https://image.tmdb.org/t/p/';
@@ -23,3 +25,28 @@ export const socialMediaLinks = [
         link: 'https://emmajs.vercel.app'
     },
 ]
+
+export const sidebarLinks = (id?: string) => {
+  const links = [
+    {
+      label: 'Home',
+      link: '/',
+      icon: BiHomeAlt2,
+    },
+    {
+      label: 'Movies',
+      link: id ? `/movies/${id}` : '/movies',
+      icon: AiOutlineVideoCamera,
+    },
+    {
+      label: 'TV Series',
+      icon: PiTelevisionSimple,
+    },
+    {
+      label: 'Upcoming',
+      icon: BsCardList,
+    },
+  ]
+
+  return links
+}

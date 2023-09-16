@@ -3,15 +3,12 @@ import Link from "next/link";
 
 import { AiOutlineSearch } from 'react-icons/ai'
 import { FaEquals } from 'react-icons/fa'
+import Logo from "../shared/Logo";
 
 const Navbar = () => {
   return (
     <div className="flex justify-between w-[90%] lg:w-4/5 mx-auto mt-5 items-center lg:mt-7 relative z-10">
-      <Link href='/' className="flex items-center">
-        <Image src='/assets/logo.svg' alt='logo' width={50} height={50} priority className=" stroke-transparent stroke-0" />
-        
-        <span className="ml-2 lg:text-xl">MovieBox</span>
-      </Link>
+      <Logo />
 
       <div className="flex items-center lg:hidden">
           <div>

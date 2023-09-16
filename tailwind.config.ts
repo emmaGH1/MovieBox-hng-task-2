@@ -37,6 +37,9 @@ const config: Config = {
       '8xl': '6rem',
       '9xl': '8rem',
     }, 
+    fontFamily: {
+      'custom': ['"DM Sans"', 'sans-serif']
+    }
   },
   extend: {},
   plugins: [],

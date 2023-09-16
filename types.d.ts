@@ -4,11 +4,11 @@ export interface MovieData {
     adult: boolean;
     backdrop_path: string;
     id: number;
-    name: string;
-    title: string;
-    original_name: string;
+    name?: string;
+    title?: string;
+    original_name?: string;
     original_language: string;
-    original_title: string;
+    original_title?: string;
     overview: string;
     poster_path: string;
     media_type: string;
@@ -18,11 +18,24 @@ export interface MovieData {
     video: boolean;
     vote_average: number;
     vote_count: number;
+    media_type: "movie" | "tv";
+    runtime: number;
+    genres: Genre[];
   }
-
-export interface SidebarLinkProps {
-  label: string,
-  link: string,
-  icon?: IconType,
-  id: string
-}[]
+  
+  export interface Genre {
+      id: number;
+      name: string;
+  }
+  export interface Movies {
+    page: number;
+    results: MovieData[];
+  }
+  export interface MovieCardProps {
+    id: number,
+    poster_path: string,
+    release_date: string,
+    title: string,
+    vote_average: number,
+    popularity: number,
+ }

@@ -1,5 +1,5 @@
+import { BASE_URL } from '@/constants';
 import { NextResponse } from 'next/server'
-const base_url = 'https://api.themoviedb.org/3/'
 
 export async function GET() {
   const options = {
@@ -10,7 +10,7 @@ export async function GET() {
      
   };
   
-  const res = await fetch(`${base_url}/movie/top_rated?language=en-US&page=1`, options)
+  const res = await fetch(`${BASE_URL}/movie/top_rated?language=en-US&page=1`, options)
 
     if (!res.ok) {
       throw new Error('Failed to fetch data')

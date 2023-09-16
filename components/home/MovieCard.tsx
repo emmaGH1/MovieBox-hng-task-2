@@ -7,15 +7,13 @@ import { IMG_BASE_URL } from "../../constants";
 import Link from "next/link";
 
 interface Props {
-    id: number,
-    posterPath: string,
-    releaseDate: string,
-    title: string,
-    voteAverage: number,
-    popularity: number,
+  id: number,
+  posterPath: string,
+  releaseDate: string,
+  title: string,
+  voteAverage: number,
+  popularity: number,
 }
-
-
 
 const MovieCard = ({ id, posterPath, releaseDate, title, voteAverage, popularity }: Props) => {
     const [isFavorite, setIsFavorite] = useState(false)
