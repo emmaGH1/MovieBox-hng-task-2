@@ -20,6 +20,7 @@ const Discover = async () => {
   
     return (
       <div className="flex w-full scroll-smooth">
+        
         {/* Banner image */}
         <div className="absolute inset-0 bg-fixed bg-cover ">
           <Image
