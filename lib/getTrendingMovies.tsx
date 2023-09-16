@@ -5,7 +5,6 @@ export async function getTrendingMovies() {
         cache: 'default',
     })
     
-   
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }
