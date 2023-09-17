@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { BsFillPlayFill } from 'react-icons/bs'
 import { AiFillStar } from 'react-icons/ai'
+import { Clock3 } from "lucide-react";
 
 type Params = {
     params: {
@@ -59,7 +60,7 @@ export default async function Page({ params: { id } }: Params) {
                 {movie.name || movie.original_title} 
                 <span className="hidden lg:flex ml-2 font-bold text-xl">•</span>
               </div> 
-              <div data-testid='release-date flex items-center'>
+              <div data-testid='movie-release-date' className='flex items-center'>
                 {year}
                 <span className="mx-2 font-bold text-xl">•</span>
               </div>
@@ -70,10 +71,10 @@ export default async function Page({ params: { id } }: Params) {
               <span className="mx-2 font-bold text-xl">•</span>
             </div> 
 
-            <div data-testid='movie-runtime' className="flex items-center">
-              {new Date(movie.release_date).toUTCString()}
-              <span className="mx-1 font-bold text-xl">•</span>
-            </div> 
+            <p className="flex items-center gap-2 font-medium">
+              <Clock3 className="w-5 h-5" /> Runtime:{" "}
+              <span data-testid="movie-runtime">{movie.runtime}</span>mins
+            </p>
 
             <div className="my-3 lg:my-0 flex gap-2 items-center justify-center">
               {movie.genres.map((genre: any) => (
