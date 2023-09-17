@@ -25,7 +25,7 @@ const MovieCard = ({ id, posterPath, releaseDate, title, voteAverage, popularity
     }
 
   return (
-    <div data-testid="movie-card" className="flex flex-col mb-10 shadow-md" >
+    <Link href={`/movies/${id}`} data-testid="movie-card" className="flex flex-col mb-10 shadow-md" >
        <div className="relative lg:flex lg:justify-center">
             <Image 
             data-testid="movie-poster"
@@ -37,11 +37,12 @@ const MovieCard = ({ id, posterPath, releaseDate, title, voteAverage, popularity
             />
             <AiFillHeart className={`absolute top-0 right-0 w-7 h-7 bg-[#f3f4f680] rounded-full p-1 mr-3 mt-3 ${isFavorite ? 'text-rose-700' : 'text-white'}`} onClick={handleIsFavorite} />
        </div>
-       <Link href={`/movies/${id}`}   className="text-gray-400 px-2 mb-2 mt-2">USA, 
-       <span data-testid="movie-release-date">
-        {year}
-      </span></Link>
-       <Link href={`/movies/${id}`} data-testid="movie-title"  className="text-gray-900 text-lg font-bold px-2 mb-1">{title}</Link>
+       <div data-testid="movie-release-date"   className="text-gray-400 px-2 mb-2 mt-2"> 
+            {year}
+      </div>
+       <div data-testid="movie-title"  className="text-gray-900 text-lg font-bold px-2 mb-1">
+         {title}
+        </div>
        <div className="flex text-gray-400 justify-between px-2">
             <div className="flex items-center mr-8">
               <Image src='/assets/imdb.svg' alt='imdb' width={40} height={10} className="mt-1" />
@@ -52,7 +53,7 @@ const MovieCard = ({ id, posterPath, releaseDate, title, voteAverage, popularity
               <div> {popularity > 100 ? 100 : popularity.toFixed(0)}% </div>
             </div>
         </div>
-    </div>
+    </Link>
   );
 };
 
