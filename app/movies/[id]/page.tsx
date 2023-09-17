@@ -27,9 +27,9 @@ export default async function Page({ params: { id } }: Params) {
    const movieData: Promise<MovieData> = getMovie(id)
 
    const [movie] = await Promise.all([movieData])
-   const date = new Date(movie.release_date)
-   const year = date.getFullYear()
-    const formatNumberToK = (number: number): string => {
+   const dateInLocalTimezone = new Date(movie.release_date);
+   const dateInUTC = dateInLocalTimezone.toISOString();
+   const formatNumberToK = (number: number): string => {
       if (number >= 1000) {
           const numInK = (number / 1000).toFixed(0);
           return numInK + "k";
@@ -57,8 +57,8 @@ export default async function Page({ params: { id } }: Params) {
                 <span className="hidden lg:flex ml-2 font-bold text-xl">•</span>
               </div> 
               <div className='flex items-center'>
-                <div     data-testid='movie-release-date'>
-                  {year}
+                <div data-testid='movie-release-date'>
+                  {dateInUTC}
                 </div>
                 <span className="mx-2 font-bold text-xl">•</span>
               </div>
@@ -70,9 +70,9 @@ export default async function Page({ params: { id } }: Params) {
             </div> 
 
             <p className="flex items-center gap-2 font-medium">
-              <Clock3 className="w-5 h-5" /> Runtime:{" "}
-              <span data-testid="movie-runtime">{movie.runtime}
-              </span>mins
+              <span data-testid="movie-runtime">
+                {movie.runtime}
+              </span>
             </p>
 
             <div className="my-3 lg:my-0 flex gap-2 items-center justify-center">
