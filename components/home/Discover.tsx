@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { AiFillPlayCircle } from 'react-icons/ai';
-import { IMG_BASE_URL } from "@/constants";
+import { BASE_URL, IMG_BASE_URL } from "@/constants";
 import { MovieData } from "@/types";
 import { getTrendingMovies } from "@/lib/getTrendingMovies";
+import Link from "next/link";
 
 
 const getRandomIndex = (array: object[]) => {
@@ -55,7 +56,7 @@ const Discover = async () => {
           >
             {currentItem?.overview}
           </div>
-          <div className="flex justify-center lg:justify-normal">
+          <Link href={`/movies/${currentItem?.id}`} className="flex justify-center lg:justify-normal z-50">
             <button
               className="flex mt-5 bg-rose-700 hover:bg-rose-500
                   transition-colors px-5 py-[6px] items-center rounded-md cursor-pointer delay-100 duration-300"
@@ -63,7 +64,7 @@ const Discover = async () => {
               <AiFillPlayCircle className='w-8 h-8 mr-3' />
               <span className="uppercase text-md">watch trailer</span>
             </button>
-          </div>
+          </Link>
         </div>
       </div>
     );

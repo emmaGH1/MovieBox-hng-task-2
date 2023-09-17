@@ -66,7 +66,7 @@ export default async function Page({ params: { id } }: Params) {
             </div> •
 
             <div data-testid='movie-runtime'>
-              {runtimeToHoursAndMinutes(movie.runtime)}
+              {new Date(movie.release_date).toUTCString()}
             </div> •
 
             <div className="flex">
