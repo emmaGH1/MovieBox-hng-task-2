@@ -7,10 +7,10 @@ export default function Layout({
 }) {
   return (
     <div className="text-black flex">
-      <div className="w-[14rem]">
+      <div className=" hidden lg:flex w-[14rem]">
         <Sidebar />
       </div>
-      <main className="w-[80%] mx-auto">
+      <main className="w-full lg:w-[80%] mx-auto">
        {children}
       </main>
     </div>
