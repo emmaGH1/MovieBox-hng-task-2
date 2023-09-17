@@ -26,7 +26,7 @@ const FeaturedMovies = () => {
   )}
 
   console.log(error, isLoading, data)
-  const fetchedData = data?.data?.results.splice(0, 12)
+  const fetchedData = data?.data?.results.splice(0, 10)
   return (
     <div className="flex flex-col">
       <div className='mx-auto w-[90%] flex justify-between m-5'>
