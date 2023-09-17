@@ -5,7 +5,7 @@ export async function GET() {
   const options = {
     headers: {
       accept: 'application/json',
-      Authorization: `Bearer ${process.env.AUTHENTICATION_KEY}`
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMTllOTI2OGYwYjlmOWFlODY5ZDk0NWQ0NTEyNjRkOSIsInN1YiI6IjY0ZmZhMTU5ZWZlYTdhMDBhYWQ3MDNlYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9D-nClfvjOEhgTSqvE-RZJdY6X6PcrdIG8xsssgW2xg`
     },
      
   };
